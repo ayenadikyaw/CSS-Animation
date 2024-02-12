@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animation</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <i class="star"></i>
+    <i class="star"></i>
+    <i class="star"></i>
+    <i class="star"></i>
+    <i class="star"></i>
+    <i class="star"></i>
+    <div class="musicbtn">
+      <button class="musicBtn" onclick="playMusic()">Play/Pause Music</button>
+    </div>
+    <div></div>
+    <div class="city">
+      <img src="./images/cityNight.png" alt="" />
+    </div>
+    <div class="moon">
+      <img src="./images/moon.png" alt="" id="moonImg" />
+    </div>
+    <div class="tanjiro">
+      <img src="./images/Tanjiro.png" alt="" id="tanjiroImg" />
+    </div>
+    <div class="zenitsu">
+      <img src="./images/zenitsu.png" alt="" id="zenitsuImg" />
+    </div>
+    <div class="inosuke">
+      <img src="./images/inosuke-removebg-preview.png" alt="" id="inosukeImg" />
+    </div>
+    <div class="cherry">
+      <img src="./images/cherry.png" alt="" id="cherryImg" />
+    </div>
+    <div class="logo">
+      <img src="./images/logo.png" alt="" id="logoImg" />
+    </div>
+    <div class="cherryleaf">
+      <i class="leaf"></i>
+      <i class="leaf"></i>
+      <i class="leaf"></i>
+      <i class="leaf"></i>
+      <i class="leaf"></i>
+      <i class="leaf"></i>
+      <i class="leaf"></i>
+      <i class="leaf"></i>
+      <i class="leaf"></i>
+      <i class="leaf"></i>
+      <i class="leaf"></i>
+      <i class="leaf"></i>
+      <i class="leaf"></i>
+      <i class="leaf"></i>
+      <i class="leaf"></i>
+      <i class="leaf"></i>
+      <i class="leaf"></i>
+      <i class="leaf"></i>
+    </div>
+    <div class="bird1"></div>
+    <div class="bird2"></div>
+    <div class="Text">
+      <h1>Demon Slayer: Kimetsu no Yaiba 鬼滅の刃</h1>
+      <p align="justify">
+        Demon Slayer is a staple of Japanese pop culture. First published in
+        2015, Demon Slayer, or Kimetsu no Yaiba in Japanese, quickly made a name
+        for itself on the Japanese scene before conquering the international
+        scene. Today we introduce you to this manga whose popularity has
+        exploded in recent years.
+      </p>
+      <button class="readMore">Readmore</button>
+    </div>
+    <audio src="./music/gurenge.mp3" id="song"></audio>
+    <script>
+      isPlay = false;
+      function playMusic() {
+        if (isPlay == false) {
+          isPlay = true;
+        } else {
+          isPlay = false;
+        }
+        if (isPlay == true) {
+          document.getElementById("song").play();
+        } else {
+          document.getElementById("song").pause();
+        }
+      }
+    </script>
+  </body>
+</html>

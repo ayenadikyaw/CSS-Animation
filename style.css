@@ -1,0 +1,415 @@
+body {
+  background: #2e4452 !important;
+  box-shadow: inset 0 0 200px #5ea4b8; /*inset: for inner shadow */
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  margin: 0;
+}
+
+.musicbtn{
+  position: absolute;
+  right: 20px;
+  top: 30px;
+}
+
+.musicbtn button {
+  background-color: transparent;
+  color: gold;
+  border-radius: 20px;
+  border: #02101981 2px solid;
+  width: 150px;
+  height: 30px;
+}
+
+.city {
+  position: fixed;
+  width: 200%; /*make the viewport double to see the animation continuously*/
+  bottom: 0px;
+  height: 100%;
+  animation: cityMoving 15s linear infinite;
+  pointer-events: none; /* bug solved: prevent music button from being stopped wroking*/
+
+} 
+
+/* city image setting */
+.city img {
+  width: 100%; 
+  height: 100%;
+  object-fit: cover; /* Maintain aspect ratio while covering the container */
+  margin-bottom: 0px;
+}
+
+/* animation for  moving the city image */
+@keyframes cityMoving {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100%;
+  }
+}
+
+.moon img {
+  position: absolute;
+  width: 10%;
+  right: 100px;
+  top: 100px;
+}
+
+.tanjiro img {
+  width: 10%;
+  position: absolute;
+  bottom: 0px;
+  animation: jump 6s ease infinite;
+  transform: translateX(-100%);
+}
+
+.zenitsu img {
+  width: 7%;
+  position: absolute;
+  bottom: 0px;
+  animation: jump 6s ease infinite;
+  animation-delay: 1s;
+  transform: translateX(-100%);
+}
+
+.inosuke img {
+  width: 10%;
+  position: absolute;
+  bottom: 0px;
+  animation: jump 6s ease infinite;
+  animation-delay: 3s;
+  transform: translateX(-100%);
+}
+
+/* cherry tree*/
+.cherry img {
+  max-width: 20%;
+  position: absolute;
+  right: 0;
+  top: 100px;
+}
+
+.logo img {
+  width: 5%;
+  margin: 20px;
+  margin-top: 50px;
+}
+
+/* jump animation for three characters */
+@keyframes jump {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0.6;
+  }
+  10% {
+    transform: translateY(0) translateX(100px);
+  }
+
+  30% {
+    transform: translateY(-250px) translateX(300px);
+  }
+
+  50% {
+    transform: translateY(0px) translateX(500px);
+  }
+  60% {
+    transform: translateY(-300px) translateX(600px);
+  }
+  70% {
+    transform: translateY(0) translateX(700px);
+  }
+
+  90% {
+    transform: translateY(0) translateX(1000px);
+  }
+  100% {
+    transform: translateY(-600px) translateX(1200px);
+  }
+}
+
+/* create star for falling animation */
+.star {
+  background: white;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 0%,
+    #ffffff 100%
+  );
+  height: 50px;
+  position: absolute;
+  width: 3px;
+  margin: -50px;
+}
+
+.star:nth-child(1) {
+  animation-name: move;
+  animation-delay: 1s;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  margin: -50px;
+}
+
+.star:nth-child(2) {
+  animation-name: move;
+  animation-delay: 0.5s;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  margin-top: -50px;
+  margin-left: 100px;
+}
+
+.star:nth-child(3) {
+  animation-name: move;
+  animation-delay: 2s;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  margin-top: -50px;
+  margin-left: 100px;
+}
+
+.star:nth-child(4) {
+  animation-name: move;
+  animation-delay: 2s;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  margin-top: -50px;
+  margin-left: 100px;
+}
+
+.star:nth-child(5) {
+  animation-name: move;
+  animation-delay: 1.5s;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  margin-top: -50px;
+  margin-left: 150px;
+}
+
+.star:nth-child(6) {
+  animation-name: move;
+  animation-delay: 2.5s;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  margin-top: -50px;
+  margin-left: 250px;
+}
+
+.star {
+  rotate: -60deg;
+}
+
+/* star falling animation */
+@keyframes move {
+  0% {
+    transform: translate(0px, 0px);
+  }
+  100% {
+    transform: translate(0px, 1500px);
+    opacity: 0;
+  }
+}
+
+/* create cherry leaflet for falling animation */
+.leaf {
+  position: absolute;
+  top: 150px;
+  right: 50px;
+  background: pink;
+  background: linear-gradient(to bottom, rgba(225, 53, 145, 0) 0%, pink 100%);
+  height: 10px;
+  width: 7px;
+  border-radius: 50%;
+}
+
+.leaf:nth-child(1) {
+  animation: leafFall 2s ease infinite;
+}
+.leaf:nth-child(2) {
+  animation: leafFall 2s ease infinite;
+  margin-right: 20px;
+  animation-delay: 0.5s;
+}
+.leaf:nth-child(3) {
+  animation: leafFall 2s ease infinite;
+  margin-right: 30px;
+  animation-delay: 1s;
+}
+.leaf:nth-child(4) {
+  animation: leafFall 2s ease infinite;
+  margin-right: 40px;
+  animation-delay: 1.5s;
+}
+.leaf:nth-child(5) {
+  animation: leafFall 2s ease infinite;
+  margin-right: 50px;
+  animation-delay: 1s;
+}
+.leaf:nth-child(6) {
+  animation: leafFall 2s ease infinite;
+  margin-right: 60px;
+  animation-delay: 1.5s;
+}
+.leaf:nth-child(7) {
+  animation: leafFall 2s ease infinite;
+  margin-right: 70px;
+  animation-delay: 2s;
+}
+.leaf:nth-child(8) {
+  animation: leafFall 2s ease infinite;
+  margin-right: 80px;
+  animation-delay: 1s;
+}
+.leaf:nth-child(9) {
+  animation: leafFall 2s ease infinite;
+  margin-right: 90px;
+  animation-delay: 2.5s;
+}
+.leaf:nth-child(10) {
+  animation: leafFall 2s ease infinite;
+}
+.leaf:nth-child(11) {
+  animation: leafFall 3s ease infinite;
+  margin-right: 5px;
+  animation-delay: 0.5s;
+}
+.leaf:nth-child(12) {
+  animation: leafFall 2s ease infinite;
+  margin-right: 15px;
+  animation-delay: 3.5s;
+}
+.leaf:nth-child(13) {
+  animation: leafFall 2s ease infinite;
+  margin-right: 25px;
+  animation-delay: 5.5s;
+}
+.leaf:nth-child(14) {
+  animation: leafFall 2s ease infinite;
+  margin-right: 25px;
+  animation-delay: 1.8s;
+}
+.leaf:nth-child(15) {
+  animation: leafFall 2s ease infinite;
+  margin-right: 45px;
+  animation-delay: 4.5s;
+}
+.leaf:nth-child(16) {
+  animation: leafFall 2s ease infinite;
+  margin-right: 55px;
+  animation-delay: 3.25s;
+}
+.leaf:nth-child(17) {
+  animation: leafFall 2s ease infinite;
+  margin-right: 95px;
+  animation-delay: 1s;
+}
+.leaf:nth-child(18) {
+  animation: leafFall 2s ease infinite;
+  margin-right: 105px;
+  animation-delay: 0.25s;
+}
+
+/*animation for leaf fall */
+@keyframes leafFall {
+  0% {
+    transform: translateY(0);
+    opacity: 0.3;
+  }
+
+  100% {
+    transform: translateY(700px);
+    opacity: 0.8;
+  }
+}
+
+/* create bird for flying animation */
+.bird1 {
+  position: absolute;
+  top: 50px;
+  left: 100px;
+  width: 50px;
+  height: 30px;
+  background-color: #000000; /* Bird color */
+  clip-path: polygon(
+    0% 0%,
+    100% 50%,
+    0% 100%
+  ); /* Triangle shape for the bird */
+  animation: flyBird1 4s linear infinite;
+}
+
+/* animation for flying bird */
+@keyframes flyBird1 {
+  0% {
+    transform: translateX(-500px);
+  }
+  50% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: translateX(1200px);
+  }
+}
+
+/* create another bird */
+.bird2 {
+  position: absolute;
+  top: 100px;
+  right: 100px;
+  width: 50px;
+  height: 30px;
+  background-color: #000000; /* Bird color */
+  clip-path: polygon(
+    0 50%,
+    100% 0,
+    100% 100%
+  ); /* Triangle shape for the bird reverse with the first one */
+  animation: flyBird2 4s linear infinite;
+}
+
+/* bird 2 animation*/
+@keyframes flyBird2 {
+  0% {
+    transform: translateX(500px);
+  }
+  50% {
+    transform: rotate(-30deg);
+  }
+  100% {
+    transform: translateX(-1200px);
+  }
+}
+
+/* text part */
+.Text {
+  position: absolute;
+  top: 120px;
+  left: 30px;
+  width: 40%;
+}
+
+.Text h1 {
+  color: rgb(30, 3, 3);
+  text-shadow: 0 0 50px pink;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.Text p {
+  color: rgba(111, 111, 84, 0.837);
+  font-family: monospace;
+}
+
+.readMore {
+  color: gold;
+  background-color: transparent;
+  border: #02101981 2px solid;
+  width: 100px;
+  height: 30px;
+  border-radius: 20px;
+  float: right;
+}
+
+.readMore:hover,.musicBtn:hover {
+  background-color: #546bab;
+}
